@@ -161,9 +161,35 @@ const deepClonedLi = li3.cloneNode(true);
 // a) element.textContent
 // Dostęp do zawartości tekstowej danego elementu
 deepClonedLi.textContent = "123";
-console.log(deepClonedLi.textContent);
+// console.log(deepClonedLi.textContent);
 
 // b) element.innerText
 // Dostęp do zawartości tekstowej danego elementu
 deepClonedLi.innerText = "321";
+// console.log(deepClonedLi);
+
+// c) element.innerHTML
+// console.log(firstArticle.innerHTML);
+// firstArticle.innerHTML = "<h3>123</h3>";
+
+// d) element.appendChild()
+// Modyfikacja elementu poprzez dodanie kolejnego elementu jako ostatnie dziecko.
+
+// 8. DODAWANIE/AKTUALIZACJA/USUWANIE ATRYBUTÓW ELEMENTÓW.
+
+// a) element.attributes
+// console.log(navH1Element.attributes);
+
+// b) element.setAttribute()
+// Metoda służy do dodawania atrybutów, pierwszy argument to nazwa atrybutu, drugi argument to wartość atrybutu.
+deepClonedLi.setAttribute("id", "deep-cloned");
 console.log(deepClonedLi);
+
+// c) element.removeAttribute()
+// Metoda usuwa podany w argumencie atrybut.
+deepClonedLi.removeAttribute("id");
+console.log(deepClonedLi);
+
+// Zad 2.
+// a) Usuń wszystkie elementy HTML z body.
+// b) Odtwórz interfejs przy pomocy wcześniej podanych metod (document.createElement, element.appendChild, setAttribute...).
