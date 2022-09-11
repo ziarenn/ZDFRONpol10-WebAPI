@@ -119,5 +119,11 @@ list1.insertAdjacentHTML("beforeend", html);
 // b) element.remove()
 
 const liToRemove = document.getElementById("li-to-remove");
-console.log(liToRemove);
-liToRemove.remove()
+//console.log(liToRemove);
+liToRemove.remove();
+
+// c) element.removeChild()
+// Usuwa podany element dziecko z elemetu na którym metoda została wywołana.
+console.log(list1.childNodes);
+console.log(list1.children);
+list1.removeChild(list1.firstElementChild);
