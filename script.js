@@ -94,5 +94,30 @@ additionalLi.textContent = 'document.querySelectorAll("cssSelectorHere")';
 
 // b) element.appendChild()
 // Dodaje podany w argumencie element jako ostatnie dziecko elementu na którym metoda została wywołana
-
 list1.appendChild(additionalLi);
+
+// c) element.insertBefore()
+// Dodaje podany w argumencie element w określonym miejscu
+
+const li2 = document.createElement("li");
+li2.textContent = "123";
+
+//list1.insertBefore(li2, list1.childNodes[2]);
+
+// d) string + element.insertAdjacentHTML()
+const html =
+  '<li id="li-to-remove">Element inserted using insertAdjacentHTML method.</li>';
+list1.insertAdjacentHTML("beforeend", html);
+
+// 4. USUWANIE ELEMENTÓW
+
+// a) czyszczenie zawartości elementów przy pomocy innerHTML
+
+//console.log(firstArticle.innerHTML);
+//firstArticle.innerHTML = "";
+
+// b) element.remove()
+
+const liToRemove = document.getElementById("li-to-remove");
+console.log(liToRemove);
+liToRemove.remove()
