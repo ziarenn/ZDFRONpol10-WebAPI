@@ -124,6 +124,46 @@ liToRemove.remove();
 
 // c) element.removeChild()
 // Usuwa podany element dziecko z elemetu na którym metoda została wywołana.
-console.log(list1.childNodes);
-console.log(list1.children);
+// console.log(list1.childNodes);
+// console.log(list1.children);
 list1.removeChild(list1.firstElementChild);
+
+// 5. ZAMIANA ELEMENTÓW
+
+// a) element.replaceChild()
+// Metoda wywoływana na elemencie rodzicu, pierwszy argument to element nowy (do wstawienia), drugi argument to element stary (do usunięcia).
+const li3 = document.createElement("li");
+li3.textContent = "This is a replaced element.";
+list1.replaceChild(li3, list1.children[1]);
+
+// 6. KLONOWANIE ELEMENTÓW
+
+// KLONOWANIE PŁYTKIE
+// <li id="1">123</li>
+// <li id='1'></li>
+
+// KLONOWANIE GŁĘBOKIE
+// <li id="1">123</li>
+// <li id='1'>123</li>
+
+// a) element.cloneNode()
+
+// a.1)
+const shallowClonedLi = li3.cloneNode(false);
+
+// a.2)
+const deepClonedLi = li3.cloneNode(true);
+// console.log(li3);
+// console.log(deepClonedLi);
+
+// 7. AKTUALIZACJA/DODAWANIE/USUWANIE ZAWARTOŚCI
+
+// a) element.textContent
+// Dostęp do zawartości tekstowej danego elementu
+deepClonedLi.textContent = "123";
+console.log(deepClonedLi.textContent);
+
+// b) element.innerText
+// Dostęp do zawartości tekstowej danego elementu
+deepClonedLi.innerText = "321";
+console.log(deepClonedLi);
