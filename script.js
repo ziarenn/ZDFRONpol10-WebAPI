@@ -47,16 +47,34 @@ const contentDivChildren = contentDiv.childNodes;
 // b) element.firstElementChild
 // Dostęp do pierwszego dziecka danego elementu
 const contentDivFirstChild = contentDiv.firstElementChild;
-console.log(contentDivFirstChild);
+//console.log(contentDivFirstChild);
 
 // c) element.lastElementChild
 // Dostęp do ostatniego dziecka danego elementu
 const contentDivLastChild = contentDiv.lastElementChild;
-console.log(contentDivLastChild);
+//console.log(contentDivLastChild);
 
 // d) element.nextElementSibling
-console.log(contentDivFirstChild.nextElementSibling);
+//console.log(contentDivFirstChild.nextElementSibling);
 
 // e) element.parentElement
 // Dostęp do elementu rodzica dla danego elementu
-console.log(contentDivLastChild.parentElement);
+//console.log(contentDivLastChild.parentElement);
+
+// Zad 1.
+// Zapisz w zmiennych wszystkie elementy występujące w naszym dokumencie HTML. Staraj się nie modyfikować samego kodu HTML, lecz jeżeli będzie to konieczne, zrób to.
+// Postaraj się wykorzystać wszsytkie poznane metody wyboru elementów.
+
+const body = document.body;
+const navElement = document.querySelector("nav");
+const navH1Element = document.getElementById("nav-h1");
+const [firstNavSpan1, secondNavSpan, thirdNavSpan, fourthNavSpan] =
+  document.getElementsByClassName("nav-span");
+// console.log(secondNavSpan);
+const contentDiv1 = document.getElementById("content");
+const [firstArticle, secondArticle, thirdArticle, fourthArticle] =
+  contentDiv1.children;
+const firstH2 = firstArticle.firstElementChild;
+const firstParagraph = firstArticle.lastElementChild;
+const list1 = document.querySelector("ul");
+const [firstLi, secondLi, thirdLi] = list1.children;
