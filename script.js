@@ -78,3 +78,21 @@ const firstH2 = firstArticle.firstElementChild;
 const firstParagraph = firstArticle.lastElementChild;
 const list1 = document.querySelector("ul");
 const [firstLi, secondLi, thirdLi] = list1.children;
+
+// const x = [1, 2, 3, 4, 5];
+// const [firstNumber, secondNumber, thirdNumber, fourthNumber, fifthNumber] = x;
+// console.log(firstNumber);
+// console.log(fourthNumber);
+
+// 3. TWORZENIE I DODAWANIE ELEMENTÓW
+
+// a) document.createElement()
+// Tworzy element w zależności od podanego argumentu, do argumentu wchodzi nazwa tagu
+const additionalLi = document.createElement("li");
+additionalLi.textContent = 'document.querySelectorAll("cssSelectorHere")';
+//console.log(additionalLi);
+
+// b) element.appendChild()
+// Dodaje podany w argumencie element jako ostatnie dziecko elementu na którym metoda została wywołana
+
+list1.appendChild(additionalLi);
