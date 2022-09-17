@@ -351,3 +351,54 @@ navButtons[0].addEventListener("click", function () {
   contentDivEl.innerHTML = "";
   renderHomePage();
 });
+
+// Zad 4.
+// 1. Stwórz funkcję renderCalculator.
+// 2. Stwórz element <form> i ustaw jego id na 'calculator'.
+// 3. Stwórz 2 elementy <input>, obu nadaj type 'number', pierwszemu nadaj id 'first-number-input', drugiemu 'second-number-input'.
+// 4. Stwórz element <select>.
+// 5. Stwórz zwykły array: ["+", "-", "*", "/"], nazwij go 'options'.
+// 6. Metodą map przejedź po arrayu options i zapisz wynik do zmiennej optionElements.
+// W metodzie map:
+// - stwórz element <option>
+// - nadaj mu atrybut value na aktualny element po którym iterujesz (pierwszy parametr metody map)
+// - nadaj mu textContent na aktualny element po którym iterujesz (pierwszy parametr metody map)
+// - zwróć element przy pomocy słowa kluczowego return
+
+
+
+// 1.
+const renderCalculator = () => {
+  // 2.
+  const form = document.createElement("form");
+  form.setAttribute("id", "calculator");
+
+  // 3.
+  const firstNumberInput = document.createElement("input");
+  firstNumberInput.setAttribute("type", "number");
+  firstNumberInput.setAttribute("id", "first-number-input");
+
+  const secondNumberInput = document.createElement("input");
+  secondNumberInput.setAttribute("type", "number");
+  secondNumberInput.setAttribute("id", "second-number-input");
+
+  // 4.
+  const select = document.createElement("select");
+
+  // 5.
+  const options = ["+", "-", "*", "/"];
+
+  // 6.
+  const optionElements = options.map((el) => {
+    console.log(el);
+    const option = document.createElement("option");
+    option.setAttribute("value", el);
+    option.textContent = el;
+    return option;
+  });
+  console.log(optionElements[0]);
+
+
+
+};
+renderCalculator();
