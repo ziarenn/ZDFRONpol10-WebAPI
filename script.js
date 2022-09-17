@@ -240,7 +240,7 @@ const renderHomePage = () => {
   newFirstArticle.appendChild(newFirstParagraph);
   newContentDiv.appendChild(newFirstArticle);
   document.body.appendChild(newContentDiv);
-  
+
   const newLastArticle = document.createElement("article");
   const newLastH2 = document.createElement("h2");
   newLastH2.textContent = "How to access the DOM?";
@@ -251,15 +251,14 @@ const renderHomePage = () => {
   to access DOM elements and are found on the global 'document' object, which is an object representation of the whole HTML document. Here are some of them:`;
   newLastArticle.appendChild(newLastParagraph);
   newContentDiv.appendChild(newLastArticle);
-  
+
   const newUl = document.createElement("ul");
   const newFirstLi = document.createElement("li");
   newFirstLi.textContent = `document.querySelector('cssSelectorHere')`;
   newUl.appendChild(newFirstLi);
   newLastParagraph.appendChild(newUl);
-}
-
-
+};
+renderHomePage();
 // Zad 3.
 // a) Stwórz funkcję displayForm()
 // W funkcji:
@@ -318,12 +317,30 @@ const displayForm = () => {
 };
 // displayForm();
 
-const button = document.createElement("button");
-button.textContent = "Click";
-document.body.appendChild(button);
+// const button = document.createElement("button");
+// button.textContent = "Click";
+// document.body.appendChild(button);
 
-button.addEventListener("click", function () {
-  console.log("Clicked!");
+// button.addEventListener("click", function () {
+//   console.log("Clicked!");
+//   displayForm();
+//   // ...
+// });
+
+const navButtons = document.getElementsByClassName("nav-span");
+
+
+
+const contentDivEl = document.getElementById("content");
+
+navButtons[1].addEventListener("click", function () {
+  contentDivEl.innerHTML = "";
   displayForm();
-  // ...
+});
+
+// Po klinięciu na przycisk Home ma się wyświetlić home page (wywołanie funkcji renderHomePage), nie kopiować kodu!
+
+navButtons[0].addEventListener("click", function () {
+  contentDivEl.innerHTML = "";
+  renderHomePage();
 });
