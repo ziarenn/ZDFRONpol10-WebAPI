@@ -449,6 +449,21 @@ const renderCalculator = () => {
   // 12.
   const contentDiv = document.getElementById("content");
   contentDiv.appendChild(form);
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const firstInputValue = +firstNumberInput.value;
+    const secondInputValue = +secondNumberInput.value;
+    const selectValue = select.value;
+    if (selectValue === "+")
+      span.textContent = firstInputValue + secondInputValue;
+    if (selectValue === "-")
+      span.textContent = firstInputValue - secondInputValue;
+    if (selectValue === "*")
+      span.textContent = firstInputValue * secondInputValue;
+    if (selectValue === "/")
+      span.textContent = firstInputValue / secondInputValue;
+  });
 };
 
 // 13.
