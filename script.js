@@ -223,39 +223,42 @@ document.body.appendChild(newNavElement);
 const newContentDiv = document.createElement("div");
 newContentDiv.setAttribute("id", "content");
 
-const newFirstArticle = document.createElement("article");
-const newFirstH2 = document.createElement("h2");
-newFirstH2.textContent = "What's DOM?";
-newFirstArticle.appendChild(newFirstH2);
-const newFirstParagraph = document.createElement("p");
-newFirstParagraph.textContent = `The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the
-document as nodes and objects; that way, programming languages can
-interact with the page. A web page is a document that can be either
-displayed in the browser window or as the HTML source. In both cases,
-it is the same document but the Document Object Model (DOM)
-representation allows it to be manipulated. As an object-oriented
-representation of the web page, it can be modified with a scripting
-language such as JavaScript.`;
-newFirstArticle.appendChild(newFirstParagraph);
-newContentDiv.appendChild(newFirstArticle);
-document.body.appendChild(newContentDiv);
+const renderHomePage = () => {
+  const newFirstArticle = document.createElement("article");
+  const newFirstH2 = document.createElement("h2");
+  newFirstH2.textContent = "What's DOM?";
+  newFirstArticle.appendChild(newFirstH2);
+  const newFirstParagraph = document.createElement("p");
+  newFirstParagraph.textContent = `The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the
+  document as nodes and objects; that way, programming languages can
+  interact with the page. A web page is a document that can be either
+  displayed in the browser window or as the HTML source. In both cases,
+  it is the same document but the Document Object Model (DOM)
+  representation allows it to be manipulated. As an object-oriented
+  representation of the web page, it can be modified with a scripting
+  language such as JavaScript.`;
+  newFirstArticle.appendChild(newFirstParagraph);
+  newContentDiv.appendChild(newFirstArticle);
+  document.body.appendChild(newContentDiv);
+  
+  const newLastArticle = document.createElement("article");
+  const newLastH2 = document.createElement("h2");
+  newLastH2.textContent = "How to access the DOM?";
+  newLastArticle.appendChild(newLastH2);
+  const newLastParagraph = document.createElement("p");
+  newLastParagraph.textContent = `You don't have to install anything additional, just JavaScript will
+  do. We have a few methods called 'selectors', these methods are used
+  to access DOM elements and are found on the global 'document' object, which is an object representation of the whole HTML document. Here are some of them:`;
+  newLastArticle.appendChild(newLastParagraph);
+  newContentDiv.appendChild(newLastArticle);
+  
+  const newUl = document.createElement("ul");
+  const newFirstLi = document.createElement("li");
+  newFirstLi.textContent = `document.querySelector('cssSelectorHere')`;
+  newUl.appendChild(newFirstLi);
+  newLastParagraph.appendChild(newUl);
+}
 
-const newLastArticle = document.createElement("article");
-const newLastH2 = document.createElement("h2");
-newLastH2.textContent = "How to access the DOM?";
-newLastArticle.appendChild(newLastH2);
-const newLastParagraph = document.createElement("p");
-newLastParagraph.textContent = `You don't have to install anything additional, just JavaScript will
-do. We have a few methods called 'selectors', these methods are used
-to access DOM elements and are found on the global 'document' object, which is an object representation of the whole HTML document. Here are some of them:`;
-newLastArticle.appendChild(newLastParagraph);
-newContentDiv.appendChild(newLastArticle);
-
-const newUl = document.createElement("ul");
-const newFirstLi = document.createElement("li");
-newFirstLi.textContent = `document.querySelector('cssSelectorHere')`;
-newUl.appendChild(newFirstLi);
-newLastParagraph.appendChild(newUl);
 
 // Zad 3.
 // a) Stwórz funkcję displayForm()
