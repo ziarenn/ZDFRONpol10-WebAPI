@@ -314,6 +314,15 @@ const displayForm = () => {
   const contentDiv = document.getElementById("content");
   contentDiv.appendChild(form);
   // console.log(contentDiv);
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // TYLKO PRZY REAGOWANIU NA SUBMIT
+    console.log(event);
+    const inputValue = input.value;
+    const textareaValue = textarea.value;
+    console.log(inputValue);
+    console.log(textareaValue);
+  });
 };
 // displayForm();
 
@@ -328,8 +337,6 @@ const displayForm = () => {
 // });
 
 const navButtons = document.getElementsByClassName("nav-span");
-
-
 
 const contentDivEl = document.getElementById("content");
 
