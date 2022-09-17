@@ -364,8 +364,33 @@ navButtons[0].addEventListener("click", function () {
 // - nadaj mu atrybut value na aktualny element po którym iterujesz (pierwszy parametr metody map)
 // - nadaj mu textContent na aktualny element po którym iterujesz (pierwszy parametr metody map)
 // - zwróć element przy pomocy słowa kluczowego return
+// 7. Wywołaj metode forEach na liście optionElements. (optionElements.forEach(el => ...))
+// W metodzie forEach:
+// - podepnij element po którym aktulanie iterujesz (pierwszy parametr metody forEach) do wcześniej stworzonego elementu <select> (.appendChild())
+// 8. Stwórz element <button>
+// - nadaj mu type 'submit'
+// - nadaj mu id 'calculator-submit-button'
+// - nadaj mu textContent 'GO'
+// 9. Stwórz element <span>
+// - nadaj mu id 'result-span'
+// 10. Stwórz element <h2>
+// - nadaj mu textContent 'Calculator'
+// 11. Podepnij wszystkie stworzone elementy do elementu <form> za pomocą metody appendChild, kolejność:
+// - h2
+// - firstNumberInput
+// - secondNumberInput
+// - select
+// - submit button
+// - result span
+// form.appendChild(h2)
+// form.appendChild(firstNumberInput)
+// ...
+// 12. Podepnij element <form> do content diva (wybierz go przy pomocy getElementById, id: 'content')
+// 13. Stwórz nową podstronę i tam wyświetlaj kalkulator (wywołanie funckji renderCalculator)
 
-
+// navButtons[2].addEventListener('click', () => {
+//   contentDiv.innerHTML = ...
+// })
 
 // 1.
 const renderCalculator = () => {
@@ -390,15 +415,44 @@ const renderCalculator = () => {
 
   // 6.
   const optionElements = options.map((el) => {
-    console.log(el);
     const option = document.createElement("option");
     option.setAttribute("value", el);
     option.textContent = el;
     return option;
   });
-  console.log(optionElements[0]);
 
+  // 7.
+  optionElements.forEach((option) => select.appendChild(option));
 
+  // 8.
+  const button = document.createElement("button");
+  button.setAttribute("type", "submit");
+  button.setAttribute("id", "calculator-submit-button");
+  button.textContent = "GO";
 
+  // 9.
+  const span = document.createElement("span");
+  span.setAttribute("id", "result-span");
+
+  // 10.
+  const h2 = document.createElement("h2");
+  h2.textContent = "Calculator";
+
+  // 11.
+  form.appendChild(h2);
+  form.appendChild(firstNumberInput);
+  form.appendChild(secondNumberInput);
+  form.appendChild(select);
+  form.appendChild(button);
+  form.appendChild(span);
+
+  // 12.
+  const contentDiv = document.getElementById("content");
+  contentDiv.appendChild(form);
 };
-renderCalculator();
+
+// 13.
+navButtons[2].addEventListener("click", function () {
+  contentDivEl.innerHTML = "";
+  renderCalculator();
+});
