@@ -5,12 +5,12 @@
 
 // Wybieranie po ID
 const navH1 = document.querySelector("#nav-h1");
-//console.log(navH1);
+// console.log(navH1);
 //console.log(typeof navH1);
 
 // Wybieranie po klasie
 const firstNavSpan = document.querySelector(".nav-span");
-//console.log(firstNavSpan);
+// console.log(firstNavSpan);
 
 // Wybieranie po tagu
 const nav = document.querySelector("nav");
@@ -256,3 +256,71 @@ const newFirstLi = document.createElement("li");
 newFirstLi.textContent = `document.querySelector('cssSelectorHere')`;
 newUl.appendChild(newFirstLi);
 newLastParagraph.appendChild(newUl);
+
+// Zad 3.
+// a) Stwórz funkcję displayForm()
+// W funkcji:
+// b) stwórz element <form> i nadaj mu id 'contact-form'
+// c) stwórz element <h2> i nadaj mu textContent 'Contact us!'
+// d) stwórz element <input> i nadaj mu type'email' oraz id 'contact-form-input-email'
+// e) stwórz element <textarea> i nadaj mu id 'contact-form-textarea'
+// f) stwórz element <button> i nadaj mu type 'submit', id 'contact-form-submit-button' oraz textContent na 'Send'
+// g) podepnij wszystkie elementy (przy pomocy metody appendChild) do elementu form, a sam form podepnij do diva content
+// h) testowo wywołaj funkcję
+
+// a)
+const displayForm = () => {
+  // b)
+  const form = document.createElement("form");
+  form.setAttribute("id", "contact-form");
+
+  // c)
+  const h2 = document.createElement("h2");
+  h2.textContent = "Contact us!";
+  // console.log(h2);
+
+  // d)
+  const input = document.createElement("input");
+  input.setAttribute("id", "contact-form-input-email");
+  input.setAttribute("type", "email");
+  // console.log(input);
+
+  // e)
+  const textarea = document.createElement("textarea");
+  textarea.setAttribute("id", "contact-form-textarea");
+  // console.log(textarea);
+
+  // f)
+  const button = document.createElement("button");
+  button.setAttribute("type", "submit");
+  button.setAttribute("id", "contact-form-submit-button");
+  button.textContent = "Send";
+  // console.log(button);
+
+  // const elements = [document.createElement(h2), document.createElement(input)];
+
+  // elements[0].setAttribute("id", "x");
+
+  // elements.forEach((el) => form.appendChild(el));
+
+  // g)
+  form.appendChild(h2);
+  form.appendChild(input);
+  form.appendChild(textarea);
+  form.appendChild(button);
+  // console.log(form);
+  const contentDiv = document.getElementById("content");
+  contentDiv.appendChild(form);
+  // console.log(contentDiv);
+};
+// displayForm();
+
+const button = document.createElement("button");
+button.textContent = "Click";
+document.body.appendChild(button);
+
+button.addEventListener("click", function () {
+  console.log("Clicked!");
+  displayForm();
+  // ...
+});
